@@ -1,0 +1,55 @@
+:root {
+    --background__color--main: black;
+    --background__color--secondary:#EAEAEB;
+    --font__color--main: #21A862;
+    /*--font__title : "Fleur De Leah";*/
+    /*--font__main : "Montserrat Uniquifier";*/
+
+}
+/**FONT**/
+
+.fleur_de_leah {
+        font-family: "Fleur De Leah", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 28 px;
+        color: var(--font__color--main);
+}
+
+
+.montserrat_uniquifier {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+/**BODY**/
+
+body {
+    background-color: var(--background__color--main);
+    color: var(--font__color--main);
+}
+/*HEADER*/
+
+h1 {
+    
+}
+
+/*MAIN*/
+
+main {
+    display: grid;
+    grid-template-rows: 5fr;
+    grid-template-columns: 5fr;
+    width: 90%;
+    margin: 5% auto;
+}
+
+main div {
+    width: calc(100dvh / 5);
+    height: 15dvh;
+    background-color: var(--background__color--secondary);
+}
+
+/*FOOTER*/
