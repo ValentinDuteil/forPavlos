@@ -1,18 +1,22 @@
 :root {
     --background__color--main: black;
     --background__color--secondary:#EAEAEB;
-    --font__color--main: #21A862;
+    --font__color--main: rgb(152, 253, 191);
     --font__main: "Montserrat", sans-serif;
     --font__title: "Fleur De Leah", cursive;
+    --font__numero: "Engagement", cursive;
 }
 
 /**BODY**/
 
 body {
+    min-height: 100dvh;
     background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url(./images/christmasTreeNeon.jpg);
     background-position: center;
     background-size: cover;
-    color: var(--font__color--main);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgb(161, 255, 29);
     font-family: var(--font__main);
 }
 
@@ -74,6 +78,21 @@ main {
     object-fit: cover;
 }
 
+.numero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font__numero);
+    font-size: 4rem;
+    font-weight: 500;
+    color: rgb(161, 255, 29);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        -1px -1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
 .back {
     background: radial-gradient(black 75%, rgb(0, 128, 75));
     color: var(--font__color--main);
@@ -88,11 +107,17 @@ main {
     cursor: not-allowed;
     opacity: 0.5;
 }
+
+.case-25.locked {
+    filter: none;
+    cursor: not-allowed;
+    opacity: 1;
+}
 /*FOOTER*/
 
 footer {
     display: block;
     justify-items: center;
     color: rgb(78, 78, 78);
-    font-size: ;
+    padding: 20px;
 }

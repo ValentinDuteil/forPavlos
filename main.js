@@ -2,7 +2,7 @@ const adventCalendar = document.querySelector(".calendrier");
 
 //Tableau de 24 cases
 const cases = [
-    {numero: 1, texte: "", image:"/images/split/splitanimage-r1-c1.png"},
+    {numero: 1, texte: "lorem ipsum blabla truc bidul machin voila je paragraphe inquatem palokitiros", image:"/images/split/splitanimage-r1-c1.png"},
     {numero: 2, texte: "", image:"/images/split/splitanimage-r1-c2.png"},
     {numero: 3, texte: "", image:"/images/split/splitanimage-r1-c3.png"},
     {numero: 4, texte: "", image:"/images/split/splitanimage-r1-c4.png"},
@@ -14,7 +14,7 @@ const cases = [
     {numero: 10, texte: "", image:"/images/split/splitanimage-r2-c5.png"},
     {numero: 11, texte: "", image:"/images/split/splitanimage-r3-c1.png"},
     {numero: 12, texte: "", image:"/images/split/splitanimage-r3-c2.png"},
-    {numero: 25, texte: "blabla", image:""},
+    {numero: 25, texte: "blabla", image:"/images/us.jpg"},
     {numero: 13, texte: "", image:"/images/split/splitanimage-r3-c4.png"},
     {numero: 14, texte: "", image:"/images/split/splitanimage-r3-c5.png"},
     {numero: 15, texte: "", image:"/images/split/splitanimage-r4-c1.png"},
@@ -29,7 +29,29 @@ const cases = [
     {numero: 24, texte: "", image:"/images/split/splitanimage-r5-c5.png"},
 ]
 
-//Création d'un dévérouillage en fonction de la date
+//Fonction qui permet de mélanger le tableau(merci IA pour Fisher-Yates shuffle algorythm)
+function shuffle(array) {
+    const copie = [...array];
+    for (let i = copie.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copie[i], copie[j]] = [copie[j], copie[i]];
+    }
+    return copie;
+}
+    //Séparer les données : images qui doivent rester fixes VS textes+numéros
+    const fixedImages = cases.map(c => c.image);
+
+    //Créer le couple textes+numéros en excluant le 25
+    const Data25 = cases.find(c => c.numero === 25);
+    const otherDatas = cases.filter(c => c.numero !== 25).map(c => ({numero: c.numero, texte: c.texte}));
+
+    //Mélanger les données (textes+numéros)
+    const shuffledDatas = shuffle(otherDatas);
+
+    //Réinsérrer la 25 toujours au centre
+    shuffledDatas.splice(12, 0, {numero: Data25.numero, texte: Data25.texte});
+
+//Création d'un dévérouillage en fonction de la date (class locked ajouté lors de la création de la grille)
 
 //Verification de la date
 function dateCheck (numeroCase) {
@@ -42,33 +64,38 @@ function dateCheck (numeroCase) {
 
 //Création de la grille
 
-for (const c of cases) {
+shuffledDatas.forEach((data, index) => {
     const card = document.createElement("div");
     card.classList.add("case");
 
     //Face avant, (image)
     const front = document.createElement("div");
     front.classList.add("face", "front");
-    front.innerHTML = `<img src="${c.image}" alt="Jour${c.numero}">`; 
+    front.innerHTML =`
+        <img src="${fixedImages[index]}" alt="Jour${data.numero}">
+        <span class="numero">${data.numero}</span>
+        `; 
 
     //Face arrière, (texte)
     const back = document.createElement("div");
     back.classList.add("face", "back");
-    back.innerHTML = `<p>${c.texte}</p>`;
+    back.innerHTML = `<p>${data.texte}</p>`;
 
     //Ajout des faces à la case
     card.appendChild(front);
     card.appendChild(back);
 
     // Vérifier si la case est verrouillée
-    if (!dateCheck(c.numero)) {
+    if (!dateCheck(data.numero)) {
         card.classList.add("locked");
     }
-
+    if (data.numero === 25) {
+        card.classList.add("case-25")
+    }
     //Animation au clic si case déverrouillée
     card.addEventListener("click", () => {
         if (card.classList.contains("locked")) {
-            alert (`🙂🖕Bien essayé Bibou, faudra attendre le ${c.numero} décembre !🖕🙂`)
+            alert (`🙂🖕Bien essayé Bibou, faudra attendre le ${data.numero} décembre !🖕🙂`)
             return;
         }
         card.classList.toggle("flip");
@@ -76,4 +103,4 @@ for (const c of cases) {
 
     //Ajout case au calendrier
     adventCalendar.appendChild(card);
-}
+});
