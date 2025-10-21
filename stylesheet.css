@@ -17,11 +17,15 @@ body {
 }
 
 /*HEADER*/
-
+header {
+    display: block;
+    justify-items: center;
+}
 h1 {
     font-family: var(--font__title);
-    font-size: 2rem;
+    font-size: 5rem;
     font-weight: 400;
+    color: rgb(161, 255, 29);
 }
 
 /*MAIN*/
@@ -71,7 +75,7 @@ main {
 }
 
 .back {
-    background: var(--background__color--secondary);
+    background: radial-gradient(black 75%, rgb(0, 128, 75));
     color: var(--font__color--main);
     transform: rotateX(180deg);
     font-family: var(--font__main);
@@ -85,3 +89,10 @@ main {
     opacity: 0.5;
 }
 /*FOOTER*/
+
+footer {
+    display: block;
+    justify-items: center;
+    color: rgb(78, 78, 78);
+    font-size: ;
+}
