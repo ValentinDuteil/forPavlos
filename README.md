@@ -35,3 +35,34 @@ cd forPavlos
 
 # Ouvrir avec Live Server ou :
 python -m http.server 8000
+
+📂 Structure du projet
+forPavlos/
+├── index.html
+├── stylesheet.css
+├── reset.css
+├── main.js
+└── images/
+    ├── split/          # 24 morceaux d'image
+    └── us.jpg          # Image case 25
+🎓 Apprentissages
+Ce projet m'a permis de pratiquer :
+
+✅ Algorithmes de tri (Fisher-Yates)
+✅ Manipulation avancée du DOM
+✅ CSS 3D (transform-style, perspective)
+✅ Gestion d'état avec classes CSS
+✅ Date API JavaScript
+
+🐛 Bugs connus & améliorations prévues
+
+ Corriger la vérification de mois (actuellement octobre au lieu de décembre)
+ Ajouter localStorage pour sauvegarder les cases ouvertes
+ Remplacer alert() par une modale custom
+ Améliorer le responsive mobile
+ Ajouter tests unitaires (Jest)
+
+📝 Licence
+Projet personnel - © Valentin Duteil 2024
+🙏 Crédits
+Développé avec ❤️ pour PavlosAlgorithme Fisher-Yates : adapté depuis [https://github.com/echenim/FisherYatesShuffle]
