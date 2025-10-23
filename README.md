@@ -48,9 +48,10 @@ forPavlos/
 └── images/
     ├── split/          # 24 morceaux d'image
     └── us.jpg          # Image case 25
+
+
 🎓 Apprentissages
 Ce projet m'a permis de pratiquer :
-
 ✅ Algorithmes de tri (Fisher-Yates)
 ✅ Manipulation avancée du DOM
 ✅ CSS 3D (transform-style, perspective)
@@ -68,4 +69,5 @@ Ce projet m'a permis de pratiquer :
 📝 Licence
 Projet personnel - © Valentin Duteil 2024
 🙏 Crédits
-Développé avec ❤️ pour PavlosAlgorithme Fisher-Yates : adapté depuis [https://github.com/echenim/FisherYatesShuffle]
+Développé avec ❤️ pour Pavlos
+Algorithme Fisher-Yates : adapté depuis [https://github.com/echenim/FisherYatesShuffle]
