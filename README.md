@@ -2,6 +2,9 @@
 
 # 🎄 Calendrier de l'Avent Interactif
 
+Attention, cette ligne peut-être à modifier selon la date à laquelle vous souhaitez regarder ce projet =>
+`return month === 9 && day >= numeroCase;`
+
 Un calendrier de l'Avent personnalisé avec déverrouillage progressif par date.
 
 ![Screenshot](./images/screenshots/screenshot01.png)
