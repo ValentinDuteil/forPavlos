@@ -1,7 +1,10 @@
 :root {
-    --background__color--main: black;
-    --background__color--secondary:#EAEAEB;
-    --font__color--main: rgb(152, 253, 191);
+    --background__color--main: #0a0f0a;
+    --background__color--secondary: #1a2e1a;
+    --font__color--main: #f4e4c1;
+    --font__color--accent: #d4af37;
+    --color__christmas--red: #8b1e1e;
+    --color__christmas--green: #2d5016;
     --font__main: "Montserrat", sans-serif;
     --font__title: "Fleur De Leah", cursive;
     --font__numero: "Engagement", cursive;
@@ -11,12 +14,12 @@
 
 body {
     min-height: 100dvh;
-    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url(./images/christmasTreeNeon.jpg);
+    background-image: linear-gradient(rgba(10, 15, 10, 0.7), rgba(26, 46, 26, 0.8)), url(./images/christmasTreeNeon.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: rgb(161, 255, 29);
+    color: var(--font__color--main);
     font-family: var(--font__main);
 }
 
@@ -29,7 +32,8 @@ h1 {
     font-family: var(--font__title);
     font-size: 5rem;
     font-weight: 400;
-    color: rgb(161, 255, 29);
+    color: var(--font__color--accent);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 /*MAIN*/
@@ -90,20 +94,21 @@ main {
     font-family: var(--font__numero);
     font-size: 4rem;
     font-weight: 500;
-    color: rgb(161, 255, 29);
+    color: var(--font__color--accent);
     text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.8),
-        -1px -1px 2px rgba(0, 0, 0, 0.5);
+        2px 2px 4px rgba(0, 0, 0, 0.9),
+        0 0 10px rgba(212, 175, 55, 0.5);
     z-index: 10;
 }
 
 .back {
-    background: radial-gradient(black 75%, rgb(0, 128, 75));
+    background: radial-gradient(circle at center, var(--color__christmas--green), var(--background__color--main));
     color: var(--font__color--main);
     transform: rotateX(180deg);
     font-family: var(--font__main);
     text-align: center;
-    padding: 10px;   
+    padding: 10px;
+    box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
 .locked {
@@ -122,6 +127,7 @@ main {
 footer {
     display: block;
     justify-items: center;
-    color: rgb(78, 78, 78);
+    color: var(--font__color--main);
     padding: 20px;
+    opacity: 0.7;
 }

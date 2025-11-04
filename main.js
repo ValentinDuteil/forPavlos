@@ -59,7 +59,7 @@ function dateCheck (numeroCase) {
     const day = today.getDate();
     const month = today.getMonth();
 
-    return month === 9 && day >= numeroCase;
+    return month === 10 && day >= numeroCase;
 }
 
 //Création de la grille
