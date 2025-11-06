@@ -57,9 +57,9 @@ function shuffle(array) {
 function dateCheck (numeroCase) {
     const today = new Date();
     const day = today.getDate();
-    const month = today.getMonth();
-
-    return month === 10 && day >= numeroCase;
+    //const month = today.getMonth();
+    return day >= numeroCase;
+    //return month === 11 && day >= numeroCase;
 }
 
 //Création de la grille
@@ -95,7 +95,7 @@ shuffledDatas.forEach((data, index) => {
     //Animation au clic si case déverrouillée
     card.addEventListener("click", () => {
         if (card.classList.contains("locked")) {
-            alert (`🙂🖕Bien essayé Bibou, faudra attendre le ${data.numero} décembre !🖕🙂`)
+            alert (`🙂🖕Bien essayé Bibou, faudra attendre le ${data.numero} du mois !🖕🙂`)
             return;
         }
         card.classList.toggle("flip");

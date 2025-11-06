@@ -2,8 +2,8 @@
 
 # 🎄 Calendrier de l'Avent Interactif
 
-Attention, cette ligne peut-être à modifier selon la date à laquelle vous souhaitez regarder ce projet =>
-`return month === 9 && day >= numeroCase;`
+Note : En production, vérifier month === 11 pour limiter à décembre  
+Version démo : fonctionne toute l'année pour permettre aux recruteurs de tester
 
 Un calendrier de l'Avent personnalisé avec déverrouillage progressif par date.
 
@@ -60,7 +60,6 @@ Ce projet m'a permis de pratiquer :
 
 🐛 Bugs connus & améliorations prévues
 
- Corriger la vérification de mois (actuellement octobre au lieu de décembre)
  Ajouter localStorage pour sauvegarder les cases ouvertes
  Remplacer alert() par une modale custom
  Améliorer le responsive mobile
